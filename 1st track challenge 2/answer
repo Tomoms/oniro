@@ -1,0 +1,4 @@
+The content added to /etc/issues is now displayed when the system has booted, right before the login prompt.
+Since it looks like the strings in the file can also be extended via escaped characters, this is probably useful
+for OS vendors and administrators of headless machines, in order to supply information about the system to users before they
+login and start using the system itself.
