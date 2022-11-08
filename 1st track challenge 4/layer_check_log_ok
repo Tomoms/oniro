@@ -1,0 +1,35 @@
+$ yocto-check-layer oniro/meta-crafters/ --without-software-layer-signature-check
+INFO: Detected layers:
+INFO: meta-crafters: LayerType.SOFTWARE, /mnt/nvme/oniro/oniro/meta-crafters
+INFO: 
+INFO: Setting up for meta-crafters(LayerType.SOFTWARE), /mnt/nvme/oniro/oniro/meta-crafters
+INFO: Getting initial bitbake variables ...
+INFO: Getting initial signatures ...
+INFO: Adding layer meta-crafters
+INFO: Starting to analyze: meta-crafters
+INFO: ----------------------------------------------------------------------
+INFO: skipped "BSPCheckLayer: Layer meta-crafters isn't BSP one."
+INFO: test_layerseries_compat (common.CommonCheckLayer)
+INFO:  ... ok
+INFO: test_parse (common.CommonCheckLayer)
+INFO:  ... ok
+INFO: test_readme (common.CommonCheckLayer)
+INFO:  ... ok
+INFO: test_show_environment (common.CommonCheckLayer)
+INFO:  ... ok
+INFO: test_signatures (common.CommonCheckLayer)
+INFO:  ... skipped 'Not testing for signature changes in a software layer meta-crafters.'
+INFO: Not testing for signature changes in a software layer meta-crafters.
+INFO: test_world (common.CommonCheckLayer)
+INFO:  ... ok
+INFO: test_world_inherit_class (common.CommonCheckLayer)
+INFO:  ... ok
+INFO: skipped "DistroCheckLayer: Layer meta-crafters isn't Distro one."
+INFO: ----------------------------------------------------------------------
+INFO: Ran 7 tests in 54.079s
+INFO: OK
+INFO:  (skipped=3)
+INFO: 
+INFO: Summary of results:
+INFO: 
+INFO: meta-crafters ... PASS 

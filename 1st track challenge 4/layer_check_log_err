@@ -1,0 +1,70 @@
+$ yocto-check-layer oniro/meta-crafters/
+INFO: Detected layers:
+INFO: meta-crafters: LayerType.SOFTWARE, /mnt/nvme/oniro/oniro/meta-crafters
+INFO: 
+INFO: Setting up for meta-crafters(LayerType.SOFTWARE), /mnt/nvme/oniro/oniro/meta-crafters
+INFO: Getting initial bitbake variables ...
+INFO: Getting initial signatures ...
+INFO: Adding layer meta-crafters
+INFO: Starting to analyze: meta-crafters
+INFO: ----------------------------------------------------------------------
+INFO: skipped "BSPCheckLayer: Layer meta-crafters isn't BSP one."
+INFO: test_layerseries_compat (common.CommonCheckLayer)
+INFO:  ... ok
+INFO: test_parse (common.CommonCheckLayer)
+INFO:  ... ok
+INFO: test_readme (common.CommonCheckLayer)
+INFO:  ... ok
+INFO: test_show_environment (common.CommonCheckLayer)
+INFO:  ... ok
+INFO: test_signatures (common.CommonCheckLayer)
+INFO:  ... FAIL
+
+Stdout:
+Loading cache...done.
+Loaded 1640 entries from dependency cache.
+INFO: Traceback (most recent call last):
+  File "/mnt/nvme/oniro/oe-core/scripts/lib/checklayer/cases/common.py", line 81, in test_signatures
+    self.fail('Adding layer %s changed signatures.\n%s' % (self.tc.layer['name'], msg))
+AssertionError: Adding layer meta-crafters changed signatures.
+15 signatures changed, initial differences (first hash before, second after):
+   base-files:do_fetch: 604ab236818d54b3027babab8369c6b80cbf54e9c84b4f2eaf624cbefe3fa16c -> 336b0d86f3830d0febd5135e9a2678e56d3ee111ecbaace83cd2f531b2e3e1a7
+      bitbake-diffsigs --task base-files do_fetch --signature 604ab236818d54b3027babab8369c6b80cbf54e9c84b4f2eaf624cbefe3fa16c 336b0d86f3830d0febd5135e9a2678e56d3ee111ecbaace83cd2f531b2e3e1a7
+      NOTE: Starting bitbake server...
+      Checksum for file issue changed from d41d8cd98f00b204e9800998ecf8427e to 3ec6ff6900f7eec070a526f20355bea8
+
+
+Stdout:
+Loading cache...done.
+Loaded 1640 entries from dependency cache.
+
+INFO: test_world (common.CommonCheckLayer)
+INFO:  ... ok
+INFO: test_world_inherit_class (common.CommonCheckLayer)
+INFO:  ... ok
+INFO: skipped "DistroCheckLayer: Layer meta-crafters isn't Distro one."
+INFO: ======================================================================
+INFO: FAIL: test_signatures (common.CommonCheckLayer)
+INFO: ----------------------------------------------------------------------
+INFO: Traceback (most recent call last):
+  File "/mnt/nvme/oniro/oe-core/scripts/lib/checklayer/cases/common.py", line 81, in test_signatures
+    self.fail('Adding layer %s changed signatures.\n%s' % (self.tc.layer['name'], msg))
+AssertionError: Adding layer meta-crafters changed signatures.
+15 signatures changed, initial differences (first hash before, second after):
+   base-files:do_fetch: 604ab236818d54b3027babab8369c6b80cbf54e9c84b4f2eaf624cbefe3fa16c -> 336b0d86f3830d0febd5135e9a2678e56d3ee111ecbaace83cd2f531b2e3e1a7
+      bitbake-diffsigs --task base-files do_fetch --signature 604ab236818d54b3027babab8369c6b80cbf54e9c84b4f2eaf624cbefe3fa16c 336b0d86f3830d0febd5135e9a2678e56d3ee111ecbaace83cd2f531b2e3e1a7
+      NOTE: Starting bitbake server...
+      Checksum for file issue changed from d41d8cd98f00b204e9800998ecf8427e to 3ec6ff6900f7eec070a526f20355bea8
+
+
+Stdout:
+Loading cache...done.
+Loaded 1640 entries from dependency cache.
+----------------------------------------------------------------------
+INFO: Ran 7 tests in 109.063s
+INFO: FAILED
+INFO:  (failures=1, skipped=2)
+INFO: 
+INFO: Summary of results:
+INFO: 
+INFO: meta-crafters ... FAIL
