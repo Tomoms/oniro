@@ -1,0 +1,2 @@
+The only users who have a login shell set, and thus who can login, are: root, oniro, sync.
+I have retrieved this information by reading /etc/passwd.
