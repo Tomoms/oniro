@@ -1,0 +1,14 @@
+oniro-linux-qemux86-64 login: oniro
+Password: 
+oniro@oniro-linux-qemux86-64:~$ sudo su
+
+We trust you have received the usual lecture from the local System
+Administrator. It usually boils down to these three things:
+
+    #1) Respect the privacy of others.
+    #2) Think before you type.
+    #3) With great power comes great responsibility.
+
+Password: 
+This account is currently not available.
+oniro@oniro-linux-qemux86-64:~$

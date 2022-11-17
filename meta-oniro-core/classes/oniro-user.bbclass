@@ -13,6 +13,7 @@ ONIRO_USER_PASSWORD ?= "\$6\$cI/pmFRW1S8seZ24\$e/7XAuVsOBgoAEmlKQnk54.jQEpRuQmmz
 
 EXTRA_USERS_PARAMS = "\
     useradd -p '${ONIRO_USER_PASSWORD}' oniro; \
+    usermod --shell /sbin/nologin root; \
 "
 
 IMAGE_INSTALL:append = " sudo"
