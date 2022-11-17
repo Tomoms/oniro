@@ -1,0 +1,19 @@
+Comments on lynis’s analysis of Oniro’s security:
+
+- Secure boot is disabled. It could be a good idea to enable it, to prevent booting kernel images signed by unauthorized keys, although given that the Oniro OS is contained in a read-only, compressed squashfs image, this might not be a relevant threat.
+
+- Bootloader [ NONE FOUND ]: this looks strange, given that I see Grub when the OS boots – possibly a lynis bug?
+
+- Password hashing: possibly use a slower and salted hashing function.
+
+- Logging failed login attempts should be enabled, as it makes it possible to discover brute-force attempts that could otherwise remain hidden.
+
+- Logrotate directories should be owned and accessible for writing to root only.
+
+- The banner provided in /etc/issue(.net) should be improved, to warn unauthorized users – this might be required by the law, in certain countries (see, for example, the “Computer Misuse Act 1990” by the UK’s government).
+
+- It is also a good idea to enable auditd, in order to intercept and log usage of critical system calls. Additionally, the sysstat resource accounting tool should also be enabled, as it could be useful for basic detection of suspicious usage of the system that could be related to an intrusion.
+
+- Further hardening can be done on the mount options for /tmp and /dev/shm, by adding the noexec mount option. This improves security by making temporary files and shared memory regions non-executable.
+
+- Another suggested option is to restrict the permissions of the /etc/sudoers.d/oniro file, which are as of now set to 644(rw-r--r--), while lynis suggests that we set them to 440 (r--r-----).
