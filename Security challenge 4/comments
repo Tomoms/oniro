@@ -1,0 +1,11 @@
+Other improvements to Oniro's security:
+
+- implement musl + a hardened malloc library, like the one developed by the GrapheneOS Android distribution: https://github.com/GrapheneOS/hardened_malloc
+
+- enable SELinux and write an appropriate sepolicy
+
+- additional kernel hardening such as: https://github.com/anthraxx/linux-hardened
+
+- disable password authentication in SSH and only allow key-based authentication
+
+- install and run some kind of intrusion detection system such as Snort
